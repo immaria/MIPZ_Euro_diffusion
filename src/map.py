@@ -66,6 +66,7 @@ class Map:
                     city.set_neighbours(neighbours_list)
 
     def __get_neighbours(self, x, y) -> List[City]:
+    # getting neighborhoods if there are any
         neighbours = []
         if self.grid[x][y + 1] is not None:
             neighbours.append(self.grid[x][y + 1])
@@ -78,6 +79,7 @@ class Map:
         return neighbours
 
     def __validate_foreign_neighbours(self) -> None:
+    # checking the existence of foreign neighbours
         if len(self.countries) <= 1:
             return
         for country in self.countries:
